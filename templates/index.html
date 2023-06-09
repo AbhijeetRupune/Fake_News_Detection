@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fake News Detection</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/font.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.css') }}">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/static/fndd.webp");
+  min-height: 100%;
+}
+
+.tc-bar .tc-button {
+  padding: 16px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="tc-top">
+  <div class="tc-bar tc-white tc-card" id="myNavbar">
+    <a href="#" class="tc-bar-item tc-button tc-wide">TechConnect</a>
+    <!-- Right-sided navbar links -->
+    <div class="tc-right tc-hide-small">
+      <a href="#about" class="tc-bar-item tc-button">ABOUT</a>
+      <a href="#team" class="tc-bar-item tc-button"><i class="fa fa-user"></i> TEAM</a>
+      <a href="#predict" class="tc-bar-item tc-button"><i class="fa fa-th"></i> PREDICT</a>
+      <a href="#contact" class="tc-bar-item tc-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="tc-bar-item tc-button tc-right tc-hide-large tc-hide-medium" onclick="tc_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="tc-sidebar tc-bar-block tc-black tc-card tc-animate-left tc-hide-medium tc-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="tc_close()" class="tc-bar-item tc-button tc-large tc-padding-16">Close ×</a>
+  <a href="#about" onclick="tc_close()" class="tc-bar-item tc-button">ABOUT</a>
+  <a href="#team" onclick="tc_close()" class="tc-bar-item tc-button">TEAM</a>
+  <a href="#predict" onclick="tc_close()" class="tc-bar-item tc-button">PREDICT</a>
+  <a href="#contact" onclick="tc_close()" class="tc-bar-item tc-button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 tc-display-container tc-grayscale-min" id="home">
+  <div class="tc-display-left tc-text-black" style="padding:48px">
+    <span class="tc-jumbo tc-hide-small">We believe in Truth</span><br>
+    <span class="tc-xxlarge tc-hide-large tc-hide-medium">We believe in Truth</span><br>
+    <span class="tc-large">Right News For Right People.</span>
+    <p><a href="#predict" class="tc-button tc-white tc-padding-large tc-large tc-margin-top tc-opacity tc-hover-opacity-off"><i><img src="/static/compass.svg" style="width:20px"></i> So, Predict News Headline</a></p>
+  </div> 
+  <div class="tc-display-bottomleft tc-text-grey tc-large" style="padding:24px 48px">
+    <a href="https://m.facebook.com"><i class="wd-hover-opacity"><img src="/static/facebook.svg" style="width:20px"></i></a>
+    <i class="wd-hover-opacity"><img src="/static/instagram.svg" style="width:20px"></i>
+    <i class="wd-hover-opacity"><img src="/static/twitter.svg" style="width:20px"></i>
+    <i class="wd-hover-opacity"><img src="/static/youtube.svg" style="width:25px"></i></a>
+  </div>
+</header>
+
+<!-- About Section -->
+<div class="tc-container" style="padding:128px 16px" id="about">
+  <h3 class="tc-center">ABOUT THE SYSTEM</h3>
+  <p class="tc-center tc-large">Something About Project</p>
+<div class="tc-container tc-light-grey tc-padding-64">
+  <div class="tc-row-padding">
+    <div class="tc-col m6">
+      <h3>Fake News Detection System</h3>
+      <p style="text-align: justify; text-justify: inter-word">Today is a world of information, everyone from each and every age group<br> is using smartphone 
+        which has social media, which spreads information.<br>This information is not always correct, 
+        sometime fake information is <br>populated through social media.</p>
+        <p style="text-align: justify; text-justify: inter-word">This spreading of fake news is being a very big issue across the globe.<br>This fake news are being incorporated in human minds 
+        via social<br> media. We read the articles on Facebook, WhatsApp, Instagram, Twitter Etc.<br> 
+        Sometime these articles give us wrong message or incorrect message<br> which is also called fake 
+        news.</p>
+        <p style="text-align: justify; text-justify: inter-word">This fake news is being a very big scam in which many people are <br>being trapped.To 
+        solve this big issue, we have developed a system <br>called “Fake news detection system”.</p>
+    </div>
+    <div class="tc-col m6">
+      <h3>Confusion Matrix</h3>
+      <p class="tc-wide"><i class="fa fa-camera tc-margin-right"></i>Precision</p>
+      <div class="tc-grey">
+        <div class="tc-container tc-dark-grey tc-center" style="width:90%">94%</div>
+      </div>
+      <p class="tc-wide"><i class="fa fa-desktop tc-margin-right"></i>Recall</p>
+      <div class="tc-grey">
+        <div class="tc-container tc-dark-grey tc-center" style="width:85%">97%</div>
+      </div>
+      <p class="tc-wide"><i class="fa fa-photo tc-margin-right"></i>F1-Score</p>
+      <div class="tc-grey">
+        <div class="tc-container tc-dark-grey tc-center" style="width:75%">95%</div>
+      </div>
+      <p class="tc-wide"><i class="fa fa-photo tc-margin-right"></i>Accuracy</p>
+      <div class="tc-grey">
+        <div class="tc-container tc-dark-grey tc-center" style="width:75%">95%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Team Section -->
+<div class="tc-container" style="padding:128px 16px" id="team">
+  <h3 class="tc-center">THE TEAM</h3>
+  <p class="tc-center tc-large">The ones who runs this project</p>
+  <div class="tc-row-padding tc-grayscale" style="margin-top:64px">
+    <div class="tc-col l3 m6 tc-margin-bottom">
+      <div class="tc-card">
+        <div class="tc-container">
+          <h3>Akansha S. Umak</h3>
+          <p class="tc-opacity">Roll N0. 9</p>
+          <p>PRMIT&R CSE SECTION 'C'</p>
+          <p><button class="tc-button tc-light-grey tc-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="tc-col l3 m6 tc-margin-bottom">
+      <div class="tc-card">
+        <div class="tc-container">
+          <h3>Abhijeet R. Rupune</h3>
+          <p class="tc-opacity">Roll No. 10</p>
+          <p>PRMIT&R CSE SECTION 'C'</p>
+          <p><button class="tc-button tc-light-grey tc-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="tc-col l3 m6 tc-margin-bottom">
+      <div class="tc-card">
+        <div class="tc-container">
+          <h3>Alkesh S. Lajurkar</h3>
+          <p class="tc-opacity">Roll No. 11</p>
+          <p>PRMIT&R CSE SECTION 'C'</p>
+          <p><button class="tc-button tc-light-grey tc-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="tc-col l3 m6 tc-margin-bottom">
+      <div class="tc-card">
+        <div class="tc-container">
+          <h3>Madhubala N. Lahabar</h3>
+          <p class="tc-opacity">Roll No. 12</p>
+          <p>PRMIT&R CSE SECTION 'C'</p>
+          <p><button class="tc-button tc-light-grey tc-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- Predict Section -->
+<div class="tc-container tc-center tc-dark-grey" style="padding:128px 16px" id="predict">
+  <h3>News Prediction</h3>
+  <p class="tc-large">Check the news that is real or fake</p>
+  <div class="tc-row-padding" style="margin-top:64px">
+    <div class="tc-light-grey tc-container" style="margin: auto; width: 80%; border: 3px solid #000;
+    padding: 10px">
+      <br><p><b><h3>{{prediction_text}}</h3></b></p>
+    <form action="/index#predict" target="_self" autocomplete="off" method="POST">
+    <p><textarea  class="tc-input tc-padding-16" id="news" name="news" placeholder="Write News Headline.."required style="height:200px"></textarea></p>
+    <p>
+      <button class="tc-button tc-dark-grey tc-padding-large" type="submit">
+        <i><img src="/static/compass.svg" style="width:20px"></i> PREDICT
+      </button>
+    </p>
+    </form>
+    </div>
+</div>
+</div>
+<!-- End Predict Section -->
+
+<!-- Contact Section -->
+<div class="tc-container tc-light-grey" style="padding:128px 16px" id="contact">
+  <h3 class="tc-center">CONTACT</h3>
+  <p class="tc-center tc-large">Lets get in touch. Send us a message:</p>
+  <div style="margin-top:48px">
+    <p><i class="fa fa-map-marker fa-fw tc-xxlarge tc-margin-right"></i>Alkesh S. Lajurkar</p>
+    <p><i class="fa fa-phone fa-fw tc-xxlarge tc-margin-right"></i> Phone: 8390956095/9370193470</p>
+    <p><i class="fa fa-envelope fa-fw tc-xxlarge tc-margin-right"> </i> Email: alkeshlajurkar@gmail.com</p>
+    <br>
+    <form action="/index" target="_blank" method="POST" autocomplete="off">
+      <p><input class="tc-input tc-border" type="text" placeholder="Name" required name="name"></p>
+      <p><input class="tc-input tc-border" type="text" placeholder="Email" required name="email"></p>
+      <p><input class="tc-input tc-border" type="text" placeholder="Subject" required name="subject"></p>
+      <p><input class="tc-input tc-border" type="text" placeholder="Message" required name="message"></p>
+      <p>
+        <button class="tc-button tc-black" type="submit">
+          <i><img src="/static/compass.svg" style="width:20px"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+   </div>
+</div>
+
+<!-- Footer -->
+<footer class="tc-center tc-black tc-padding-64">
+  <a href="#home" class="tc-button tc-light-grey"><i class="fa fa-arrow-up tc-margin-right"></i>To the top</a>
+  <div class="tc-xlarge tc-section">
+    <a href="https://m.facebook.com"><i class="tc-hover-opacity"><img src="/static/facebook.svg" style="width:40px"></i></a>
+    <i class="tc-hover-opacity"><img src="/static/instagram.svg" style="width:40px"></i>
+    <i class="tc-hover-opacity"><img src="/static/twitter.svg" style="width:40px"></i>
+    <i class="tc-hover-opacity"><img src="/static/youtube.svg" style="width:55px"></i>
+  </div>
+  <p>Powered by <a href="#" title="tc.CSS" target="_blank" class="tc-hover-text-green">TechConnect</a></p>
+  <p>&copy Copyright-2023 All Right Reserved, Developed by Team<a href="#" title="tc.CSS" target="_blank" class="tc-hover-text-green"> TechConnect</a></p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function tc_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function tc_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>
